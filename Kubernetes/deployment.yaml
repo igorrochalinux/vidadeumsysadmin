@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: sampleapp-api
-        image: vidadeumsysadmin/kubernetes:sampleapp
+        image: vidadeumsysadmin/kubernetes:sampleappv1
         imagePullPolicy: Always 
         resources:
           requests:
