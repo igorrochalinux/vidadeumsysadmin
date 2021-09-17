@@ -8,12 +8,9 @@ spec:
     istio: ingressgateway
   servers:
   - port:
-      number: 443
-      name: https-kiali
-      protocol: HTTPS
-    tls:
-      mode: SIMPLE
-      credentialName: telemetry-gw-cert
+      number: 80
+      name: http-kiali
+      protocol: HTTP
     hosts:
     - "kiali.vidadeumsysadmin.me"
 ---
