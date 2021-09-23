@@ -11,7 +11,8 @@ spec:
   - host: sampleapp.dominiodeexemplo.com
     http:
       paths:
-      - backend:
-          serviceName: sampleapp-api-svc
-          servicePort: 80
+      pathType: ImplementationSpecific
+      - defaultBackend:
+          service.name: sampleapp-api-svc
+          service.port.number: 80
         path: /(.*)
