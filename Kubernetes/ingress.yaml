@@ -2,17 +2,18 @@ apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   namespace: sampleapp
-  annotations:
-    kubernetes.io/ingress.class: nginx
-    nginx.ingress.kubernetes.io/rewrite-target: /$1
   name: sampleapp-api-ingress
+  annotations:
+    kubernetes.io/ingress.class: "nginx"
 spec:
   rules:
-  - host: sampleapp.dominiodeexemplo.com
+  - host: sampleapp.vidadeumsysadmin.me
     http:
       paths:
-        pathType: ImplementationSpecific
-      - defaultBackend:
-          service.name: sampleapp-api-svc
-          service.port.number: 80
-        path: /(.*)
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: sampleapp-api-svc
+            port:
+              number: 80
