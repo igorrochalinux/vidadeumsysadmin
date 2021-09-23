@@ -6,6 +6,10 @@ metadata:
   annotations:
     kubernetes.io/ingress.class: "nginx"
 spec:
+  tls:
+    - hosts:
+        - sampleapp.vidadeumsysadmin.me
+      secretName: certificate-vidadeumsys
   rules:
   - host: sampleapp.vidadeumsysadmin.me
     http:
